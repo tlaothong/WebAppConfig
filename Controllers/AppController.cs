@@ -15,8 +15,8 @@ namespace WebAppConfig.Controllers
         }
 
         [HttpGet("")]
-        public string GetRootContent() => GetContent(string.Empty);
-        [HttpGet("{id}")]
-        public string GetContent(string id) => config["ManaAppConfig"];
+        public string GetRootContent() => GetContent("AllowedHosts");
+        [HttpGet("{varname}")]
+        public string GetContent(string varname) => config[varname];
     }
 }
